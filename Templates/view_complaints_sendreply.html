@@ -1,0 +1,41 @@
+
+{%include "template_header_admin.html"%}
+<center>
+	<h1>View complaints and reply</h1>
+	<style type="text/css">
+		th,td:{
+			color: white;
+		}
+	</style>
+	<form method="POST">
+	<table class="table" style="width: 1200px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Client Name</th>
+			<th>Designation</th>
+			<th>Reply</th>
+			<th>Date & Time</th>
+		</tr>
+		{% for row in data['msgs'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['cli_name']}}</td>
+			<td>{{row['desc']}}</td>
+			<td>
+					{% if row['reply']=='pending' %}
+					<input class="form-control" type="text" name="reply{{loop.index}}">
+					<input type="submit" class="btn btn-primary" name="submit{{loop.index}}">
+					{% else %}
+					{{ row['reply'] }}
+					{% endif %}
+				</td>
+			<td>{{row['date_time']}}</td>
+
+					
+		</tr>
+		{%endfor%}
+	</table>
+	</form>
+</center>
+
+{%include "template_footer_admin.html"%}

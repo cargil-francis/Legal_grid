@@ -1,0 +1,35 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Advocates</h1>	
+	
+	<table class="table" style="width: 500px;">
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Qualification</th>
+			<th>Gender</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>House Name</th>
+			<th>Place</th>
+		</tr>
+		{% for row in data['advocates'] %}
+		<tr>
+			<td>{{row['first_name']}}</td>
+			<td>{{row['last_name']}}</td>
+			<td>{{row['qualification']}}</td>
+			<td>{{row['gender']}}</td>
+			<td>{{row['phone']}}</td>
+			<td>{{row['email']}}</td>
+			<td>{{row['house_name']}}</td>
+			<td>{{row['place']}}</td>
+			<td><a class="btn btn-success btn-sm" btn-sm href="client_assign_case_adv?aid={{row['adv_id']}}">Assign Case</a>
+			<a class="btn btn-primary btn-sm" href="client_chat_advocate?advocate_id={{row['adv_id']}}">Chat</a></td>
+			
+			
+		</tr>
+		{%endfor%}</th>
+		</tr>
+	</table>
+	</center>
+{%include "template_footer_cli.html"%}

@@ -1,0 +1,32 @@
+{%include"template_header_adv.html"%}
+	<center>
+		<h1>Client Details</h1>
+		<table class="table" style="width: 900px;">
+			<tr>
+				<th>Client Name</th>
+				<th>Gender</th>
+				<th>DOB</th>		
+				<th>Phone</th>	
+				<th>Email</th>
+				<th>House Name</th>		
+				<th>Place</th>
+				<th>Pincode</th>			
+			</tr>
+			{% for row in data['cli_details'] %}
+				<tr>
+					<td>{{row['clientname']}}</td>
+					<td>{{row['gender']}}</td>
+					<td>{{row['dob']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td>{{row['house_name']}}</td>
+					<td>{{row['place']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td><a class="btn btn-primary btn-sm" href="advocate_chat_client?client_id={{row['client_id']}}">Chat</a></td>
+					<!-- <td>{{row['status']}}</td> -->
+			</tr>
+			{%endfor%}
+		</table>
+	</center>
+
+{%include"template_footer_adv.html"%}

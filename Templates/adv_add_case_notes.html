@@ -1,0 +1,38 @@
+{%include"template_header_adv.html"%}
+<center>
+	<form method="post">
+		<h1>Add Case Notes</h1>
+		<table class="table" style="width: 600px;">
+			<tr>
+				<th>Case Note</th>
+				<td><textarea name="note" class="form-control"></textarea></td>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="Add" class="btn btn-success"></td>
+			</tr>
+		</table>
+		
+	</form>
+
+	<h1>Added Case Notes</h1>
+	<table class="table" style="width: 800px;">
+		<tr>
+			<th>Sl No</th>
+			<th>Case </th>
+			<th>Notes</th>
+			<th>Note Added On</th>
+		</tr>
+
+		{% for row in data['notes'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['title']}}</td>
+			<td>{{row['c_desc']}}</td>
+			<td>{{row['date_time']}}</td>
+		</tr>
+		{% endfor %}
+	</table><br><br><br><br>
+</center>
+{%include"template_footer_adv.html"%}

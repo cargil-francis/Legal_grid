@@ -1,0 +1,24 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Case Files</h1>	
+	
+	<table class="table" style="width: 700px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Title</th>
+			<th>File</th>
+			
+			
+		</tr>
+		{% for row in data['case_files'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['file_title']}}</td>
+				<td><a href="/{{row['file_path']}}" download="{{row['file_path']}}">Download File</a></td>
+					
+			</tr>
+				{%endfor%}</th>
+		</tr>
+	</table>
+	</center>
+{%include "template_footer_cli.html"%}

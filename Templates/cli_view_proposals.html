@@ -1,0 +1,31 @@
+{%include "template_header_cli.html"%}
+<center>
+	<h1>Proposals</h1>
+	<table class="table" style='width:1200px;'>
+		<tr>
+			<th>SL.NO</th>
+			<th>Title</th>
+			<th>Advocate name</th>
+			<th>Fees</th>
+			<th>Date & Time</th>
+			<th>Status</th>
+		</tr>
+		{% for row in data['proposals']%}
+		<tr>
+			
+			<td>{{loop.index}}</td>
+			<td>{{row['title']}}</td>
+			<td>{{row['adv_name']}}</td>
+			<td>{{row['fee']}}</td>
+			<td>{{row['date_time']}}</td>
+			<td>{{row['pstatus']}}</td>
+			{% if row['pstatus']=='pending' %}
+			<td><a class="btn btn-success btn-sm" href="?action=accept&pid={{row['proposal_id']}}">Accept</a></td>
+			<td><a class="btn btn-danger btn-sm" href="?action=reject&pid={{row['proposal_id']}}">Reject</a></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+
+{%include "template_footer_cli.html"%}

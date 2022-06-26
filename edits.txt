@@ -1,0 +1,30 @@
+<h1>Admin Home</h1>
+	<a href="admin_view_advocates">View Advocates</a>
+	
+	<a href="admin_manage_casetype">Manage Casetype</a>
+	
+	<a href="admin_manage_lawdetails">Law Details</a>
+
+
+
+
+
+	<h1>Advocate home</h1>
+	<a href="adv_view_casetypes">View Cases</a>
+	<a href="adv_view_client_assigncases">Client Assigned Cases</a>
+	<a href="adv_view_clientcases">Client Cases</a>
+	<a href="adv_view_lawdetails">Law Details</a>
+	<a href="adv_view_rating">Rating</a>
+	<a href="adv_view_usercases">User Cases</a>
+
+
+
+<h1> Client Home page</h1>
+	<a href="cli_manage_cases"> Manage cases</a>
+	<a href="cli_view_lawdetails">Law details</a>
+	<a href="cli_view_ongoingcases">Ongoing cases</a>
+	<a href="cli_rate_adv">rate advocates</a>
+	<a href="cli_view_adv_assigncases">assigncases</a>
+	<a href="cli_snd_comp_viewreply">Send complaints&view reply</a>
+	<a href="cli_chat_adv">Chat Advocate</a>
+	

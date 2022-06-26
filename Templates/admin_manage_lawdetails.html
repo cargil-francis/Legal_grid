@@ -1,0 +1,88 @@
+{%include "template_header_admin.html"%}
+	<center>
+		<h1>Law Details</h1>
+		<form method="POST">
+			{% if data['upd_law'] %}
+
+			<style type="text/css">
+				td,th{
+					color: white;
+				}
+			</style>
+	
+
+	<table class="table"style="width:500px;">
+		<tr>
+			<th>Title</th>
+			<td><input type="" name="title" class="form-control" value="{{data['upd_law'][0]['title']}}" required></td>
+		</tr>
+		<tr>
+			<th>Ipc_code</th>
+			<td><input type="text" name="ipc_code" class="form-control" value="{{data['upd_law'][0]['ipc_code']}}" required></td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td><input type="text" name="description" class="form-control" value=" {{data['upd_law'][0]['description']}}" required></td>
+		</tr>
+		<tr>
+			<th>Penalty</th>
+			<td><input type="text" name="penalty" class="form-control" value="{{data['upd_law'][0]['penalty']}}" required></td>
+		</tr>
+		<tr>
+			<td><input type="submit" class="btn btn-primary" name="submits" value="Update" ></td>
+		</tr>
+	</table>
+	{% else %}
+
+
+
+	<table class="table" style="width:500px;">
+		<tr>
+			<th>Title</th>
+			<td><input type="" name="title" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Ipc_code</th>
+			<td><input type="text" name="ipc_code" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td><input type="text" name="description" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Penalty</th>
+			<td><input type="text" name="penalty" class="form-control"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" class="btn btn-primary" name="submit" ></td>
+		</tr>
+	</table>
+	{% endif %}
+	</form>
+
+	<table class="table" style="width:600px;">
+		<tr>
+			<th>Sno</th>
+			<th>Title</th>
+			<th>Ipc_code</th>
+			<th>Description</th>
+			<th>Penalty</th>
+			
+		</tr>
+		{% for row in data['advocates'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['ipc_code']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['penalty']}}</td>
+					<td><a class="btn btn-danger btn-sm" href="?action=delete&ids={{row['law_id']}}">Delete</a></td>
+					<td><a class="btn btn-success btn-sm" href="?action=update&ids={{row['law_id']}}">Update</a></td>
+					
+					
+				</tr>
+				{%endfor%}
+	</table>
+	</center>
+	{%include "template_footer_admin.html"%}
+

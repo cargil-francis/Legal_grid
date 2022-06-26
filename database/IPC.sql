@@ -1,0 +1,1 @@
+SELECT * FROM legalgrid.ipc_sec;

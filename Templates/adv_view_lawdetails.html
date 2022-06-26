@@ -1,0 +1,27 @@
+{%include"template_header_adv.html"%}
+	<center>
+		<h1>Law Details</h1>
+	
+
+	<table class="table" style="width:800px;">
+		<tr>
+			<th>Title</th>
+			<th>Ipc_code</th>
+			<th>Description</th>
+			<th>Penalty</th>
+			
+		</tr>
+		{% for row in data['advocates'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['ipc_code']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['penalty']}}</td>
+					
+					
+				</tr>
+				{%endfor%}
+	</table>
+	</center>
+{%include"template_footer_adv.html"%}

@@ -1,0 +1,37 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Ongoing cases</h1>
+	
+	<table class="table" style="width:1000px;">
+		<tr>
+		
+			<th>SL.NO</th>
+			<th>Case Type</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Case Date</th>
+			<th>Police station</th>
+			<th>Pincode</th>
+			<th>phone</th>
+			
+		</tr>
+		{% for row in data['on_cases'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['type_name']}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['case_date']}}</td>
+					<td>{{row['police_station']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td><a class="btn btn-success btn-sm" href="cli_view_advocate_details?ids={{row['adv_id']}}">Advocate Details</a>
+					<a class="btn btn-primary btn-sm" href="cli_view_case_notes?ids={{row['case_id']}}">Case Notes</a>
+					<a class="btn btn-danger btn-sm" href="cli_view_case_files?ids={{row['case_id']}}">Case Files</a></td>
+				</tr>
+				{%endfor%}
+		</tr>
+	</table>
+	</center>
+
+{%include "template_footer_cli.html"%}

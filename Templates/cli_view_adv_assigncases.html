@@ -1,0 +1,21 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Assign cases</h1>	
+	
+	<table class="table" style="width: 500px;">
+		<tr>
+		
+			<th>Date & Time</th>
+			
+		</tr>
+		{% for row in data['advocates'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['date_time']}}</td>
+					
+				</tr>
+				{%endfor%}</th>
+		</tr>
+	</table>
+	</center>
+{%include "template_footer_cli.html"%}

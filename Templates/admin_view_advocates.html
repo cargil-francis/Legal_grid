@@ -1,0 +1,44 @@
+{%include "template_header_admin.html"%}
+
+<style type="text/css">
+	td,th{
+		color: white;
+	}
+</style>
+	<center>
+		<h1>Advocates</h1>
+		<table class="table" style="width: 1200px;">
+			<tr>
+				<th>Sno</th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Qualification</th>
+				<th>Gender</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>House name</th>
+				<th>Place</th>
+				<th>Status</th>
+			</tr>
+			{% for row in data['advocates'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}}</td>
+					<td>{{row['last_name']}}</td>
+					<td>{{row['qualification']}}</td>
+					<td>{{row['gender']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td>{{row['house_name']}}</td>
+					<td>{{row['place']}}</td>
+					{% if row['status'] == 'pending' %}
+					<td><a class="btn btn-success btn-sm" href="?action=accept&ids={{row['login_id']}}">Accept</a>
+					<a class="btn btn-danger btn-sm" href="?action=reject&ids={{row['login_id']}}">Reject</a></td>
+					{% else %}
+					<td>{{row['status']}}</td>
+					{% endif %}
+				</tr>
+				{%endfor%}
+		</table>
+	</center>
+{%include "template_footer_admin.html"%}

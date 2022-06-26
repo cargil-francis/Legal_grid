@@ -1,0 +1,72 @@
+
+	{% include "template_header.html" %}					
+
+	{%for message in get_flashed_messages() %}
+		{{message}}
+	{%endfor%}
+
+
+
+
+
+
+	<h1>Login</h1>
+	<form method="POST">
+	<center>
+		<table class="table" style="width:500px;">
+		<tr>
+			<th> USERNAME</th>
+			<td><input type="text" class="form-control" name="username" required></td>
+		</tr>
+		<tr>
+
+			<th> PASSWORD</th>
+			<td><input type="password" class="form-control" name="password" required> </td>
+			
+		</tr>
+		<div>
+		<tr>
+			<td><input type="submit" class="btn btn-primary"  name="submit"></td>
+		</tr>
+	</div>
+	</table>
+	</center>
+</form>
+{% include "template_footer.html" %}
+
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

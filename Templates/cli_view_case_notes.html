@@ -1,0 +1,24 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Case Notes</h1>	
+	
+	<table class="table" style="width: 700px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Description</th>
+			<th>Date&Time</th>
+			
+			
+		</tr>
+		{% for row in data['case_notes'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['date_time']}}</td>
+					
+				</tr>
+				{%endfor%}</th>
+		</tr>
+	</table>
+	</center>
+{%include "template_footer_cli.html"%}

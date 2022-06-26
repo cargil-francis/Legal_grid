@@ -1,0 +1,24 @@
+{%include"template_header_adv.html"%}
+	<center>
+		<h1>View Case Type</h1>
+	
+		<table class="table" style="width:800px;">
+		<tr>
+			<th>Type name</th>	
+			<th>Description</th>	
+		</tr>
+		</tr>
+			{% for row in data['advocates'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['type_name']}}</td>
+					<td>{{row['description']}}</td>
+					
+				</tr>
+				{%endfor%}
+		
+		
+	</table>
+	</center>
+	{%include"template_footer_adv.html"%}
+

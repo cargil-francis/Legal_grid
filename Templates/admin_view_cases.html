@@ -1,0 +1,39 @@
+{%include"template_header_admin.html"%}
+	<center>
+		<h1>Cases</h1>
+	
+		<table class="table" style="width:1200px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Type</th>
+			<th>Title</th>		
+			<th>Description</th>	
+			<th>Date</th>
+			<th>Police Station</th>		
+			<th>Pincode</th>
+			<th>Phone</th>
+			<th>Advocate Name</th>		
+			<th>Status</th>	
+
+		</tr>
+		</tr>
+			{% for row in data['cases'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['type_name']}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['case_date']}}</td>
+					<td>{{row['police_station']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['adv_name']}}</td>
+					<td>{{row['status']}}</td>
+					
+				</tr>
+				{%endfor%}
+		
+		
+	</table>
+	</center>
+	{%include"template_footer_admin.html"%}

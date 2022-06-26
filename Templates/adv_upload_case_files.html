@@ -1,0 +1,44 @@
+{%include"template_header_adv.html"%}
+
+<center>
+	<form method="post" enctype="multipart/form-data">
+		<h1>Upload Files Here</h1>
+		<table class="table" style="width: 500px;">
+			<tr>
+				<th>File Title</th>
+				<td><input type="text" name="title" class="form-control"></td>
+			</tr>
+
+			<tr>
+				<th>Choose File</th>
+				<td><input type="file" name="file"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="submit"></td>
+			</tr>
+		</table>
+		
+	</form>
+
+	<h1>Uploaded Files</h1>
+	<table class="table" style="width: 800px;">
+
+		<tr>
+			<th>Sl No</th>
+			<th>File Title</th>
+			<th>File</th>
+		</tr>
+
+
+		{% for row in data['upload'] %}
+		<tr>
+			
+			<td>{{loop.index}}</td>
+			<td>{{row['file_title']}}</td>
+			<td><a href="/{{row['file_path']}}" download="{{row['file_path']}}">Download File</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+
+{%include"template_footer_adv.html"%}

@@ -1,0 +1,32 @@
+{%include"template_header_adv.html"%}
+	<center>
+		<h1>Client Assigned Cases</h1>
+	
+	<table class="table" style="width:800px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Client Name</th>
+			<th>Case</th>
+			<th>Date</th>
+			<th>Status</th>
+		</tr>
+		</tr>
+			{% for row in data['assigned_cases'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['cli_name']}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['date_time']}}</td>
+					{% if row['assign_status'] == 'pending' %}
+					<td><a class="btn btn-success btn-sm" href="?action=accept&ids={{row['assign_id']}}&&cid={{['case_id']}}">Accept</a>
+					<a class="btn btn-danger btn-sm" href="?action=reject&ids={{row['assign_id']}}">Reject</a></td>
+					{% else %}
+					<td>{{row['assign_status']}}</td>
+					{% endif %}
+					
+				</tr>
+				{%endfor%}
+	</table>
+	</center>
+
+{%include"template_footer_adv.html"%}

@@ -1,0 +1,51 @@
+
+
+
+{%include "template_header_cli.html"%}
+<center>
+	<h1>Chat with advocate</h1>
+
+
+
+
+	
+	<h1>{{ data['name'][0]['name'] }}</h1>
+<br></div>
+<form method="post">
+	<div style="height:300px; width:700px; overflow-y: scroll;">
+<table style="padding-left: 100px;">
+	{% for row in data['msg'] %}
+	{% if row['sender_id']==session['client_id'] and row['sender_type']=='client' %}
+	<tr>
+		<td></td>
+		<td>
+			<input class="btn btn-primary" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+	</tr>
+	{% else %}
+	<tr>
+		<td><input class="btn btn-info" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+		<td></td>
+	</tr>
+	{% endif %}
+	{% endfor %}
+	<tr><td><br></td></tr>
+</table>
+</div>
+<table>
+	<tr>
+		<td>
+			<input type="text" style="border-color: blue" class="form-control" name="msg" >
+		</td>
+		<td align="center">
+			<input type="submit" name="submit" class="btn btn-success" value="Send Message">
+		</td>
+	</tr>
+	<tr><td><br></td></tr>
+</table>
+</form>
+</center>
+
+{%include "template_footer_cli.html"%}	
+
+
+

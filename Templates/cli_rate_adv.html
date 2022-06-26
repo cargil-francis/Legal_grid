@@ -1,0 +1,98 @@
+{%include "template_header_cli.html"%}
+
+
+<style >
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+</style>
+
+	<form method="post">
+		<center>
+			<h2>Rate Advocate</h2>
+			<table class="table" style="height: 200px; width: 600px;">
+				
+  				<tr>
+                    <th>rating</th>
+                    <td> <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" required=""/>
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" required=""/>
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" required=""/>
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" required="" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" required=""/>
+                            <label for="star1" title="text">1 star</label>
+                        </div></td>
+                </tr>
+				<tr>
+					<th>Review</th>
+					<td><textarea required name="review" class="form-control"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="submit" value="RATE" class="btn btn-info"></td>
+				</tr>
+			</table>
+        </form>
+			<br>
+			<h2>RATING</h2>
+			<table class="table" style="width: 600px;">
+				<tr>
+					<th>Sl.no</th>
+					<th>Client Name</th>
+					<th>Advocate Name</th>
+					<th>Rate</th>
+					<th>Review</th>
+					<th>Date&Time
+				</tr>
+                {% for row in data['rating'] %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{ row['cli_name'] }}</td>
+                    <td>{{ row['adv_name'] }}</td>
+                    <td>{{ row['rate'] }}</td>
+                    <td>{{ row['review'] }}</td>
+                    <td>{{ row['date_time'] }}</td>
+                </tr>
+                {% endfor %}
+			</table>
+		</center>
+{%include "template_footer_cli.html"%}

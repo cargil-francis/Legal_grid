@@ -1,0 +1,47 @@
+{%include"template_header_adv.html"%}
+
+	<center>
+		<h1>View client cases</h1>
+	
+	<table class="table" style="width:800px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Client Name</th>
+			<th>Type</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Case Date</th>
+			<th>Police station</th>
+			<th>Pincode</th>
+			<th>phone</th>
+			<th>Status</th>
+
+		</tr>
+		{% for row in data['cli_cases'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['cli_name']}}</td>
+					<td>{{row['type_name']}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['case_date']}}</td>
+					<td>{{row['police_station']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['assign_status']}}</td>
+					<!-- {% if row['assign_status'] == 'pending' %}
+					<td><a class="btn btn-success btn-sm" href="?action=accept&cid={{row['case_id']}}">Accept</a></td>
+					<td><a class="btn btn-success btn-sm" href="?action=accept&cid={{row['case_id']}}">Reject</a></td>
+					{% endif %} -->
+					{% if row['assign_status'] == 'accepted' %}
+					<td><a class="btn btn-success btn-sm" href="adv_add_case_notes?ids={{row['case_id']}}">Add Case Notes</a>
+					<a class="btn btn-primary btn-sm" href="adv_upload_case_files?ids={{row['case_id']}}">Upload Case Files</a>
+					<a class="btn btn-warning btn-sm" href="advocate_chat_client?client_id={{row['client_id']}}">Chat</a></td>
+					
+					{% endif %}
+				</tr>
+				{%endfor%}
+	</table>
+	</center>
+
+{%include"template_footer_adv.html"%}

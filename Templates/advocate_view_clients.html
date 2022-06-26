@@ -1,0 +1,24 @@
+{%include"template_header_adv.html"%}
+
+	<center>
+		<h1>Clients</h1>
+	
+	<table class="table" style="width:500px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Client Name</th>
+			
+
+		</tr>
+		{% for row in data['clients'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}}</td>
+					<td><a href="advocate_chat_client?client_id={{row['client_id']}}">Chat</a></td>
+					
+				</tr>
+				{%endfor%}
+	</table>
+	</center>
+
+{%include"template_footer_adv.html"%}

@@ -1,0 +1,40 @@
+{%include "template_header_cli.html"%}
+	<center>
+		<h1>Send complaints and view reply</h1>
+
+	
+	<form method="POST">
+		<table class="table" style="width:500px;">
+			<tr>
+				<th>Description</th>
+				<td><textarea required name="description" class="form-control"></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" class="btn btn-primary" name="submit"></td>
+			</tr>
+		</table>
+
+		<table class="table" style="width:800px;">
+			<tr>
+				<th>Sl.No</th>
+				<th>Description</th>
+				<th>Reply</th>
+				<th>Date&Time</th>
+			</tr>
+			{% for row in data['complaints'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['desc']}}</td>
+				<td>{{row['reply']}}</td>
+				<td>{{row['date_time']}}</td>
+			</tr>
+				{%endfor%}
+			
+		</table>
+		
+	</form>
+</center>
+
+	
+
+{%include "template_footer_cli.html"%}

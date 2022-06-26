@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+
+
+
+
+{%include "template_header_admin.html"%}
+<style type="text/css">
+	th,td{
+		color: white;
+	}
+</style>
+<center>
+	<h1>Case Type</h1>
+
+	<form method="POST">
+		{% if data['upd_case'] %}
+		<table class="table" style="width:500px;">
+			
+
+			<tr>
+				<th>Type name</th>
+				<td><input type="text" name="type_name"  class="form-control" value="{{data['upd_case'][0]['type_name']}}"> </td>
+			</tr>
+			<tr>	
+				<th>Description</th>
+				<td><input type="text" name="description" class="form-control" value="{{data['upd_case'][0]['description']}}"> </td>
+			</tr>
+			<tr>
+				<td><input type="submit"  class="btn btn-primary" name="submits" value="Update"></td>
+			</tr>
+		</table>
+		
+		{% else %}
+
+
+
+
+		<table class="table" style="width:500px;">
+
+
+			<tr>
+				<th>Type name</th>
+				<td><input type="text" name="type_name" class="form-control"> </td>
+			</tr>
+			<tr>	
+				<th>Description</th>
+				<td><input type="text" name="description" class="form-control"> </td>
+			</tr>
+			<tr>
+				
+				<td><input type="submit"  class="btn btn-primary" name="submit"></td>
+			</tr>
+		</table>
+		{% endif %}
+
+		
+			<table class="table" style="width:800px;">
+			<tr>
+				
+				<th>SL.NO</th>
+				<th>Type name</th>	
+				<th>Description</th>	
+			</tr>
+			</tr>
+				{% for row in data['advocates'] %}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td>{{row['type_name']}}</td>
+						<td>{{row['description']}}</td>
+						<td><a class="btn btn-danger btn-sm" href="?action=delete&ids={{row['type_id']}}">Delete</a></td>
+						<td><a class="btn btn-success btn-sm" href="?action=update&ids={{row['type_id']}}">Update</a></td>
+						
+					</tr>
+					{%endfor%}
+			
+			
+		</table>
+	</form>
+</center>
+{%include "template_footer_admin.html"%}

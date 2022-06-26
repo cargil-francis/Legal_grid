@@ -1,0 +1,68 @@
+{%include "template_header_cli.html"%}
+	
+	<center>
+		<h1>Manage cases</h1>
+		<form method="POST">
+	
+
+	<table class="table" style="width:500px;">
+		
+		<tr>
+			<th>Title</th>
+			<td><input type="text" name="title" class="form-control" required></td>
+		</tr>
+		
+		<tr>
+			<th>Description</th>
+			<td><input type="text" name="description" class="form-control" required></td>
+		</tr>
+		<tr>
+			<th>Case Date</th>
+			<td><input type="Date" name="date" class="form-control" required></td>
+		</tr>
+
+		<tr>
+				<th>Police station</th>
+				<td><input type="text" name="Police" class="form-control" required></td>
+		</tr>
+		<tr>
+				<th>Pincode</th>
+				<td><input type="text" name="Pincode" class="form-control" pattern="[0-9]{6}" title="please give 6 numbers" required></td>
+		</tr>
+		<tr>
+			<th>phone</th>
+			<td><input type="text" name="phone" class="form-control" pattern="[0-9]{10}" title="Enter 10 digits" required></td>
+		</tr>
+		<tr>
+			<td><input type="submit" class="btn btn-primary" name="submit"></td>
+		</tr>
+		</form>
+		</table>
+		<table class="table">
+		<tr>
+		    <th>SL.NO</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Case Date</th>
+			<th>Police station</th>
+			<th>Pincode</th>
+			<th>phone</th>
+		</tr>
+		{% for row in data['cases'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['title']}}</td>
+					<td>{{row['description']}}</td>
+					<td>{{row['case_date']}}</td>
+					<td>{{row['police_station']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td><a class="btn btn-warning" href="cli_view_proposals?ids={{row['case_id']}}">Proposals</a></td>
+					
+				</tr>
+		{%endfor%}
+		</tr>
+	</table>
+	</center>
+
+{%include "template_footer_cli.html"%}

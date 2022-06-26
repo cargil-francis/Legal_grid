@@ -1,0 +1,22 @@
+{%include"template_header_adv.html"%}
+	<h1>View Rating</h1>
+<center>
+	<table class="table" style="width: 800px;">
+		<tr>
+			<th>SL.NO</th>
+			<th>Rate</th>
+			<th>Review</th>
+			<th>Date & Time</th>
+		</tr>
+		{% for row in data['rating'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['rate']}}</td>
+				<th>{{row['review']}}</th>
+				<th>{{row['date_time']}}</th>
+			</tr>
+		{%endfor%}
+	</table>
+</center>	
+
+{%include"template_footer_adv.html"%}
