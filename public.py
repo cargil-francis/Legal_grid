@@ -2,9 +2,23 @@ from flask import *
 from database import*
 public=Blueprint('public',__name__)
 
-@public.route('/')
+@public.route('/',methods=['get','post'])
 def dashboard():
-	return render_template('dashboard.html')
+	data={}
+
+	if 'submit' in request.form:
+		search = request.form['search']
+		q="SELECT * FROM indian_constitution WHERE article_name LIKE '%search%'"
+		res=select(q)
+		data['result']=res
+
+	q="SELECT * FROM indian_constitution"
+	res=select(q)
+	data['result']=res
+
+	
+
+	return render_template('dashboard.html',data=data)
 @public.route('/home')
 def home():
 	return render_template('homepage.html')

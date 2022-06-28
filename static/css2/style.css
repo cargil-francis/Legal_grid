@@ -289,7 +289,7 @@ span.logo-clr{
 /*start search*/
 .search-box {
     float: left;
-    width:40%;
+    width:90%;
     margin-top: 0.5em;
 	position: relative;
     z-index: 1;
@@ -299,7 +299,7 @@ span.logo-clr{
 .search-box input[type="text"] {
     outline: none;
     background: #fff;
-    width: 86%;
+    width:90%;
     margin: 0;
     z-index: 10;
     font-size: 0.9em;
@@ -308,6 +308,15 @@ span.logo-clr{
     border: none;
     -webkit-appearance: none;
     display: inline-block;
+}
+.go{
+   float: left;
+    width:5%;
+    margin-top: 0.5em;
+    position: relative;
+    
+    
+    border:1px solid rgb(197, 197, 197);
 }
 .search-box input[type="submit"] {
     background: url(../images/search.png)no-repeat;
