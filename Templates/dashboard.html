@@ -159,62 +159,17 @@ $(document).ready(function(){
 			 
 		});
 		</script>
-		<!-- /script-for sticky-nav -->
-<!--inner block start here-->
-<div class="inner-block">
-<!--market updates updates-->
-	 <div class="market-updates">
-			<div class="col-md-4 market-update-gd">
-				<div class="market-update-block clr-block-1">
-					<div class="col-md-8 market-update-left">
-						<h3>83</h3>
-						<h4>Registered User</h4>
-						<p>Other hand, we denounce</p>
-					</div>
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-file-text-o"> </i>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-4 market-update-gd">
-				<div class="market-update-block clr-block-2">
-				 <div class="col-md-8 market-update-left">
-					<h3>135</h3>
-					<h4>Daily Visitors</h4>
-					<p>Other hand, we denounce</p>
-				  </div>
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-eye"> </i>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-4 market-update-gd">
-				<div class="market-update-block clr-block-3">
-					<div class="col-md-8 market-update-left">
-						<h3>23</h3>
-						<h4>New Messages</h4>
-						<p>Other hand, we denounce</p>
-					</div>
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-envelope-o"> </i>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-		   <div class="clearfix"> </div>
-		</div>
-<!--market updates end here-->
-<!--mainpage chit-chating-->
+
 <div class="chit-chat-layer1">
-	<div class="col-md-6 chit-chat-layer1-left">
+	<div class="col-md-6 chit-chat-layer1-left" style="width:1300px">
                <div class="work-progres">
                             <div class="chit-chat-heading">
                                   SEARCH RESULT
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
+                            <div class="table-responsive" style="width: 1280px;height: 650px; overflow: auto" >
+                            	
+                   
+                                <table class="table table-hover"  >
                                   <thead>
                                     <tr>
                                       
@@ -227,7 +182,7 @@ $(document).ready(function(){
                                   </tr>
 
                               </thead>
-                              <tbody id="myTable">
+                              <tbody id="myTable" >
                               	{% for row in data['result'] %}
                                 <tr>
                                   <td>{{row['slno']}}</td>
@@ -236,147 +191,26 @@ $(document).ready(function(){
                                   <td>{{row['article_no']}}</td>
                                   <td>{{row['description']}}</td>                                 
                                                              
-                                 <!-- <td><span class="label label-danger">in progress</span></td>
-                                  <td><span class="badge badge-info">50%</span></td>-->
+                              
                               </tr>
                               {%endfor%}
-                             <!-- <tr>
-                                  <td>2</td>
-                                  <td>Twitter</td>
-                                  <td>Evan</td>                               
-                                                                  
-                                  <td><span class="label label-success">completed</span></td>
-                                  <td><span class="badge badge-success">100%</span></td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Google</td>
-                                  <td>John</td>                                
-                                  
-                                  <td><span class="label label-warning">in progress</span></td>
-                                  <td><span class="badge badge-warning">75%</span></td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>LinkedIn</td>
-                                  <td>Danial</td>                                 
-                                                             
-                                  <td><span class="label label-info">in progress</span></td>
-                                  <td><span class="badge badge-info">65%</span></td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>Tumblr</td>
-                                  <td>David</td>                                
-                                                                 
-                                  <td><span class="label label-warning">in progress</span></td>
-                                  <td><span class="badge badge-danger">95%</span></td>
-                              </tr>
-                              <tr>
-                                  <td>6</td>
-                                  <td>Tesla</td>
-                                  <td>Mickey</td>                                  
-                                                             
-                                  <td><span class="label label-info">in progress</span></td>
-                                  <td><span class="badge badge-success">95%</span></td>
-                              </tr>-->
+                            
                           </tbody>
                       </table>
                   </div>
              </div>
       </div>
-      <div class="col-md-6 chit-chat-layer1-rit">    	
-      	  <div class="geo-chart">
-					<section id="charts1" class="charts">
-				<div class="wrapper-flex">
-				
-				    <table id="myTable" class="geoChart tableChart data-table col-table" style="display:none;">
-				        <caption>Student Nationalities Table</caption>
-				        <tr>
-				            <th scope="col" data-type="string">Country</th>
-				            <th scope="col" data-type="number">Number of Students</th>
-				            <th scope="col" data-role="annotation">Annotation</th>
-				        </tr>
-				        <tr>
-				            <td>China</td>
-				            <td align="right">20</td>
-				            <td align="right">20</td>
-				        </tr>
-				        <tr>
-				            <td>Colombia</td>
-				            <td align="right">5</td>
-				            <td align="right">5</td>
-				        </tr>
-				        <tr>
-				            <td>France</td>
-				            <td align="right">3</td>
-				            <td align="right">3</td>
-				        </tr>
-				        <tr>
-				            <td>Italy</td>
-				            <td align="right">1</td>
-				            <td align="right">1</td>
-				        </tr>
-				        <tr>
-				            <td>Japan</td>
-				            <td align="right">18</td>
-				            <td align="right">18</td>
-				        </tr>
-				        <tr>
-				            <td>Kazakhstan</td>
-				            <td align="right">1</td>
-				            <td align="right">1</td>
-				        </tr>
-				        <tr>
-				            <td>Mexico</td>
-				            <td align="right">1</td>
-				            <td align="right">1</td>
-				        </tr>
-				        <tr>
-				            <td>Poland</td>
-				            <td align="right">1</td>
-				            <td align="right">1</td>
-				        </tr>
-				        <tr>
-				            <td>Russia</td>
-				            <td align="right">11</td>
-				            <td align="right">11</td>
-				        </tr>
-				        <tr>
-				            <td>Spain</td>
-				            <td align="right">2</td>
-				            <td align="right">2</td>
-				        </tr>
-				        <tr>
-				            <td>Tanzania</td>
-				            <td align="right">1</td>
-				            <td align="right">1</td>
-				        </tr>
-				        <tr>
-				            <td>Turkey</td>
-				            <td align="right">2</td>
-				            <td align="right">2</td>
-				        </tr>
-				
-				    </table>
-				
-				    <div class="col geo_main">
-				         <h3 id="geoChartTitle">World Market</h3>
-				        <div id="geoChart" class="chart"> </div>
-				    </div>
-				
-				
-				</div><!-- .wrapper-flex -->
+     
 				</section>				
 			</div>
       </div>
      <div class="clearfix"> </div>
-</div>
+</div>-->
 <!--main page chit chating end here-->
 <!--main page chart start here-->
 <div class="main-page-charts">
    <div class="main-page-chart-layer1">
-		<div class="col-md-6 chart-layer1-left"> 
+		<!--<div class="col-md-6 chart-layer1-left"> 
 			<div class="glocy-chart">
 			<div class="span-2c">  
                         <h3 class="tlt">Client Analytics</h3>
@@ -401,8 +235,8 @@ $(document).ready(function(){
                         </script>
                     </div> 			  		   			
 			</div>
-		</div>
-		<div class="col-md-6 chart-layer1-right"> 
+		</div>-->
+		<div class="col-md-6 chart-layer1-right" style="width:1550px"> 
 			<div class="user-marorm">
 			<div class="malorum-top">				
 			</div>
@@ -435,7 +269,7 @@ $(document).ready(function(){
 	<div class="col-md-6 chart-layer2-right">
 			<div class="prograc-blocks">
 		     <!--Progress bars-->
-	        <div class="home-progres-main">
+	       <!-- <div class="home-progres-main">
 	           <h3>Our users get</h3>
 	         </div>
 	        <div class='bar_group'>
@@ -443,13 +277,13 @@ $(document).ready(function(){
 					<div class='bar_group__bar thin' label='Quality' show_values='true' tooltip='true' value='235'></div>
 					<div class='bar_group__bar thin' label='Amount' show_values='true' tooltip='true' value='550'></div>
 					<div class='bar_group__bar thin' label='Answered queries' show_values='true' tooltip='true' value='456'></div>
-		    </div>
+		    </div>-->
 				<script src="static/js2/bars.js"></script>
 
 	      <!--//Progress bars-->
 	      </div>
 	</div>
-	<div class="col-md-6 chart-layer2-left">
+	<!--<div class="col-md-6 chart-layer2-left">
 		<div class="content-main revenue">			
 					<h3>Total Revenue</h3>
 					<canvas id="radar" height="300" width="300" style="width: 300px; height: 300px;"></canvas>
@@ -483,7 +317,7 @@ $(document).ready(function(){
 
 
 	<div class="clearfix"> </div>
-</div>
+</div>-->
 <!--climate end here-->
 </div>
 <!--inner block end here-->
@@ -514,8 +348,7 @@ $(document).ready(function(){
 		          <ul id="menu-comunicacao-sub" >
 		            <li id="menu-mensagens" style="width: 120px" ><a href="/login">Login</a>		              
 		            </li>
-		           <!-- <li id="menu-arquivos" ><a href="typography.html">Typography</a></li>
-		            <li id="menu-arquivos" ><a href="icons.html">Icons</a></li>-->
+		          
 		          </ul>
 		        </li>
 		         <!-- <li><a href="maps.html"><i class="fa fa-map-marker"></i><span>Maps</span></a></li>-->
@@ -526,25 +359,14 @@ $(document).ready(function(){
 		          </ul>
 		        </li>
 		        
-		       <!-- <li><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span></a></li>
-		        <li><a href="#"><i class="fa fa-envelope"></i><span>Mailbox</span><span class="fa fa-angle-right" style="float: right"></span></a>
-		        	 <ul id="menu-academico-sub" >
-			            <li id="menu-academico-avaliacoes" ><a href="inbox.html">Inbox</a></li>
-			            <li id="menu-academico-boletim" ><a href="inbox-details.html">Compose email</a></li>
-		             </ul>
-		        </li>-->
+		      
 		         <li><a href="#"><i class="fa fa-cog"></i><span>System</span><span class="fa fa-angle-right" style="float: right"></span></a>
 		         	 <ul id="menu-academico-sub" >
 			            <li id="menu-academico-avaliacoes" ><a href="404.html">404</a></li>
 			            <li id="menu-academico-boletim" ><a href="blank.html">Blank</a></li>
 		             </ul>
 		         </li>
-		        <!-- <li><a href="#"><i class="fa fa-shopping-cart"></i><span>E-Commerce</span><span class="fa fa-angle-right" style="float: right"></span></a>
-		         	<ul id="menu-academico-sub" >
-			            <li id="menu-academico-avaliacoes" ><a href="product.html">Product</a></li>
-			            <li id="menu-academico-boletim" ><a href="price.html">Price</a></li>
-		             </ul>
-		         </li>-->
+		       
 		      </ul>
 		    </div>
 	 </div>
